@@ -125,4 +125,9 @@ public class HomeTestLayer extends CRMBaseClass {
 
 		}
 	}
+	@Test(priority=4)
+	public void testRepo()
+	{
+		System.out.println("this is new method for master");
+	}
 }
