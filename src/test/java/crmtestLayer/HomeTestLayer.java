@@ -25,21 +25,18 @@ public class HomeTestLayer extends CRMBaseClass {
 
 	@BeforeMethod()
 	public void setUp() throws IOException {
-		// objLoginPagePractice = new LoginPagePractice();
-		// objHomePage = new HomePage();
-		objUtils = new Utils();
 		setUpBrowser();
-		// objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"),
-		// prop.getProperty("Password"));
+		objLoginPagePractice = new LoginPagePractice();
+		objHomePage = new HomePage();
+		objUtils = new Utils();
+
+		objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"), prop.getProperty("Password"));
 
 	}
 
-	// @Test(priority = 1)
+	@Test(priority = 1)
 	public void verifyLinksHomeTab() throws IOException {
 
-		objLoginPagePractice = new LoginPagePractice();
-
-		objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"), prop.getProperty("Password"));
 		List<String> element = new ArrayList();
 		element.add("Home");
 		element.add("Calendar");
@@ -64,11 +61,9 @@ public class HomeTestLayer extends CRMBaseClass {
 		}
 	}
 
-//	@Test(priority = 2)
+	@Test(priority = 2)
 	public void verifyTabIsClickable() throws IOException {
-		objLoginPagePractice = new LoginPagePractice();
 
-		objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"), prop.getProperty("Password"));
 		List<String> listElement = new ArrayList();
 
 		listElement.add("Home");
@@ -100,9 +95,7 @@ public class HomeTestLayer extends CRMBaseClass {
 
 	@Test(priority = 3)
 	public void mouseHoverAction() throws IOException {
-		objLoginPagePractice = new LoginPagePractice();
 
-		objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"), prop.getProperty("Password"));
 		List<String> listElement = new ArrayList();
 
 		listElement.add("Home");
