@@ -11,13 +11,13 @@ import CRMpracticeUtility.Utils;
 import crmPageLayer.HomePage;
 import crmPageLayer.LoginPagePractice;
 
-public class HomePageP extends CRMBaseClass {
+public class HomePageLayer extends CRMBaseClass {
 
 	LoginPagePractice objLoginPagePractice;
 	HomePage objHomePage;
 	Utils objUtils;
 
-	public HomePageP() throws IOException {
+	public HomePageLayer() throws IOException {
 
 	}
 
@@ -28,7 +28,6 @@ public class HomePageP extends CRMBaseClass {
 		objHomePage = new HomePage();
 		objUtils = new Utils();
 		objHomePage = objLoginPagePractice.loginToApp(prop.getProperty("Username"), prop.getProperty("Password"));
-
 
 	}
 
@@ -43,40 +42,50 @@ public class HomePageP extends CRMBaseClass {
 		}
 
 	}
-	
-	//@Test(priority=2)
-	public void verifyIsTabClickable()
-	{
+
+	// @Test(priority=2)
+	public void verifyIsTabClickable() {
 		List<String> Homelinks = objHomePage.listOfElement();
 		objUtils.frameHandler("mainpanel");
-		for(String verifyLinksOnHomePage : Homelinks)
-		{
+		for (String verifyLinksOnHomePage : Homelinks) {
 			objHomePage.clickOnTab(verifyLinksOnHomePage);
 		}
 	}
 
-	//@Test(priority=3)
-	public void mouseHoverOnTab()
-	{
+	@Test(priority = 3)
+	public void mouseHoverOnTab() {
 		List<String> Homelinks = objHomePage.listOfElement();
-		objUtils.frameHandler("mainpanel");
-		for(String verifyLinksOnHomePage : Homelinks)
-		{
+		objUtils.frameHandler("mainpane");
+		for (String verifyLinksOnHomePage : Homelinks) {
 			objHomePage.webElementMouseHover(verifyLinksOnHomePage);
+
 		}
-		
+
 	}
 
-	@Test(priority=4)
-	public void verifyOptionsPresent()
-	{
+	// @Test(priority = 4)
+	public void verifyOptionsPresent() {
 		List<String> Homelinks = objHomePage.listOfElement();
 		objUtils.frameHandler("mainpanel");
-		for(String verifyLinksOnHomePage : Homelinks)
-		{
+		for (String verifyLinksOnHomePage : Homelinks) {
 			objHomePage.getTextOfTab(verifyLinksOnHomePage);
 		}
-			
+
+	}
+
+	// @Test(priority = 5)
+	public void verifyCalenderOptions() {
+
+		List<String> calOptions = objHomePage.calenderOptions();
+		objUtils.frameHandler("mainpanel");
+
+		for (String calSubOptions : calOptions) {
+			objHomePage.webElementMouseHover("Calendar");
+
+			objHomePage.clickOnTab(calSubOptions);
+		}
+		objHomePage.webElementMouseHover("Deals");
+
 	}
 
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -116,9 +115,6 @@ public class HomeTestLayer extends CRMBaseClass {
 		}
 
 	}
-
-	// @Test(priority=6)
-	public void testRepo() {
-		System.out.println("this is new method for master");
-	}
+   
+	
 }
