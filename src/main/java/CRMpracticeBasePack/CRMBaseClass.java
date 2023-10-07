@@ -50,12 +50,14 @@ public class CRMBaseClass {
 
 	}
 	
-	public String takeScreenShot(String TestName,WebDriver driver) throws IOException {
+	public String takeScreenShot(String TestName) throws IOException {
 		File SourceFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String destinationPath = "C:\\NewAutomationFrame\\My-Test-Automation-project\\FailedTestCasesScreenShots\\"+TestName+"Test.png";
 		FileUtils.copyFile(SourceFile, new File(destinationPath));
 		return destinationPath;
 
 	}
+	
+	
 
 }

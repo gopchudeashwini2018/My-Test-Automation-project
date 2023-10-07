@@ -23,6 +23,18 @@ public class Listeners extends CRMBaseClass implements ITestListener {
 
 	public void onTestSuccess(ITestResult result) {
 		System.out.println("Test suite run successfully");
+		
+		System.out.println(result.getMethod());
+
+		String testCaseName = result.getName();
+		try {
+			takeScreenShot(testCaseName);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	public void onTestFailure(ITestResult result) {
@@ -31,7 +43,7 @@ public class Listeners extends CRMBaseClass implements ITestListener {
 
 		String testCaseName = result.getName();
 		try {
-			takeScreenShot(testCaseName, driver);
+			takeScreenShot(testCaseName);
 		} catch (IOException e) {
 
 			e.printStackTrace();
