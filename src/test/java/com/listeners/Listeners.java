@@ -35,6 +35,7 @@ public class Listeners extends CRMBaseClass implements ITestListener {
 		} catch (IOException e) {
 
 			e.printStackTrace();
+			System.out.println("Test case get Failed");
 		}
 	}
 
