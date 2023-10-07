@@ -36,7 +36,14 @@ public class Utils extends CRMBaseClass {
 		
 	}
 	
-	
+	public String getTheText(WebElement element)
+	{
+		
+		 String textvalue = element.getText();
+		 System.out.println(textvalue);
+		 return textvalue;
+		
+	}
 	
 
 	public void frameHandler(String frame) {

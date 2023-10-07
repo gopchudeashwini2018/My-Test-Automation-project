@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import CRMpracticeBasePack.CRMBaseClass;
 import CRMpracticeUtility.Utils;
@@ -17,14 +19,13 @@ public class HomePage extends CRMBaseClass {
 
 	By all_links = By.xpath("//div[@id='navmenu']/ul/li");
 
+	@FindBy(xpath = "//ul[@style='width: 83px; margin-top: 1px; opacity: 0; visibility: hidden; filter: none;']/li")
+	public List<WebElement> listofcalenderSuboptions;
+
 	public HomePage() throws IOException {
 
-	}
+		PageFactory.initElements(driver, this);
 
-	public void uIElements(List<String> element) {
-		element.add("home");
-		element.add("Calendar");
-		element.add("Companies");
 	}
 
 	public By textValue(String elements) {
@@ -43,12 +44,11 @@ public class HomePage extends CRMBaseClass {
 	public void clickOnTab(String elements) {
 
 		driver.findElement(textValue(elements)).click();
-		;
 
 	}
 
-	public List<String> listOfElement(List<String> listElement) {
-		listElement = new ArrayList();
+	public List<String> listOfElement() {
+		List<String> listElement = new ArrayList();
 
 		listElement.add("Home");
 		listElement.add("Calendar");
@@ -75,5 +75,37 @@ public class HomePage extends CRMBaseClass {
 		objUtils.moveToElementUI(mouse);
 
 	}
+
+	public void getTextOfTab(String element) {
+		WebElement ValueOfTab = driver.findElement(textValue(element));
+
+		// System.out.println(objUtils.getTheText(ValueOfTab));
+
+		objUtils.getTheText(ValueOfTab);
+
+	}
+
+	public List<String> calenderOptions() {
+
+		List<String> caloptions = new ArrayList<String>();
+		caloptions.add("New Event");
+		caloptions.add("View Today");
+		caloptions.add("Week View");
+		caloptions.add("Month View");
+
+		return caloptions;
+	}
+
+	/*
+	 * public void listOfSubElement(List<WebElement> CalOptions, String value) {
+	 * 
+	 * for (WebElement CalenderOptions : CalOptions) 
+	 * { if(CalenderOptions.getText().equals(value)) 
+	 * 
+	 * { CalenderOptions.click(); break; }
+	 * }
+	 * 
+	 * }
+	 */
 
 }
