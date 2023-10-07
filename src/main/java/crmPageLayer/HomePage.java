@@ -96,16 +96,16 @@ public class HomePage extends CRMBaseClass {
 		return caloptions;
 	}
 
-	/*
-	 * public void listOfSubElement(List<WebElement> CalOptions, String value) {
-	 * 
-	 * for (WebElement CalenderOptions : CalOptions) 
-	 * { if(CalenderOptions.getText().equals(value)) 
-	 * 
-	 * { CalenderOptions.click(); break; }
-	 * }
-	 * 
-	 * }
-	 */
+	public List<String> companiesOptions() {
+
+		List<String> caloptions = new ArrayList<String>();
+		caloptions.add("New Company");
+		caloptions.add("Combined Form");
+		caloptions.add("Full Search Form");
+
+		return caloptions;
+	}
+
+	
 
 }

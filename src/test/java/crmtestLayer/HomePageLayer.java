@@ -31,7 +31,7 @@ public class HomePageLayer extends CRMBaseClass {
 
 	}
 
-//	@Test(priority=1)
+	// @Test(priority = 1)
 	public void verifyTabIsAvailable() {
 
 		List<String> HomeLinks = objHomePage.listOfElement();
@@ -43,7 +43,7 @@ public class HomePageLayer extends CRMBaseClass {
 
 	}
 
-	// @Test(priority=2)
+	// @Test(priority = 2)
 	public void verifyIsTabClickable() {
 		List<String> Homelinks = objHomePage.listOfElement();
 		objUtils.frameHandler("mainpanel");
@@ -52,10 +52,10 @@ public class HomePageLayer extends CRMBaseClass {
 		}
 	}
 
-	@Test(priority = 3)
+	 @Test(priority = 3)
 	public void mouseHoverOnTab() {
 		List<String> Homelinks = objHomePage.listOfElement();
-		objUtils.frameHandler("mainpane");
+		objUtils.frameHandler("mainpanel");
 		for (String verifyLinksOnHomePage : Homelinks) {
 			objHomePage.webElementMouseHover(verifyLinksOnHomePage);
 
@@ -63,7 +63,7 @@ public class HomePageLayer extends CRMBaseClass {
 
 	}
 
-	// @Test(priority = 4)
+	 @Test(priority = 4)
 	public void verifyOptionsPresent() {
 		List<String> Homelinks = objHomePage.listOfElement();
 		objUtils.frameHandler("mainpanel");
@@ -73,7 +73,7 @@ public class HomePageLayer extends CRMBaseClass {
 
 	}
 
-	// @Test(priority = 5)
+	@Test(priority = 5)
 	public void verifyCalenderOptions() {
 
 		List<String> calOptions = objHomePage.calenderOptions();
@@ -84,8 +84,19 @@ public class HomePageLayer extends CRMBaseClass {
 
 			objHomePage.clickOnTab(calSubOptions);
 		}
-		objHomePage.webElementMouseHover("Deals");
+
+		
+        List<String> comOptions = objHomePage.companiesOptions();
+
+		for (String comOption : comOptions) {
+			objHomePage.webElementMouseHover("Companies");
+			objHomePage.clickOnTab(comOption);
+
+		}
 
 	}
+
+
+	
 
 }
