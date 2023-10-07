@@ -47,8 +47,8 @@ public class HomePage extends CRMBaseClass {
 
 	}
 
-	public List<String> listOfElement(List<String> listElement) {
-		listElement = new ArrayList();
+	public List<String> listOfElement() {
+		List<String> listElement = new ArrayList();
 
 		listElement.add("Home");
 		listElement.add("Calendar");
@@ -74,6 +74,17 @@ public class HomePage extends CRMBaseClass {
 		WebElement mouse = driver.findElement(textValue(elements));
 		objUtils.moveToElementUI(mouse);
 
+	}
+	
+	public void getTextOfTab(String element)
+	{
+		WebElement ValueOfTab = driver.findElement(textValue(element));
+		
+		
+		//System.out.println(objUtils.getTheText(ValueOfTab));
+		
+		objUtils.getTheText(ValueOfTab);
+		
 	}
 
 }

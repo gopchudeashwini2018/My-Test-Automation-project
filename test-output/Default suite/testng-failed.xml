@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="crmtestLayer.HomeTestLayer">
+      <class name="crmtestLayer.HomePageP">
         <methods>
+          <include name="verifyTabIsAvailable"/>
+          <include name="verifyIsTabClickable"/>
           <include name="setUp"/>
-          <include name="verifyTabIsClickable"/>
         </methods>
-      </class> <!-- crmtestLayer.HomeTestLayer -->
+      </class> <!-- crmtestLayer.HomePageP -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-02T00:44:04 IST" name="Default suite" finished-at="2023-10-02T00:44:32 IST" duration-ms="27927">
+  <suite started-at="2023-10-06T23:12:02 IST" name="Default suite" finished-at="2023-10-06T23:12:49 IST" duration-ms="46595">
     <groups>
     </groups>
-    <test started-at="2023-10-02T00:44:04 IST" name="Default test" finished-at="2023-10-02T00:44:32 IST" duration-ms="27927">
-      <class name="crmtestLayer.HomeTestLayer">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crmtestLayer.HomeTestLayer@3eb25e1a]" started-at="2023-10-02T00:44:04 IST" name="setUp" finished-at="2023-10-02T00:44:16 IST" duration-ms="11824" status="PASS">
+    <test started-at="2023-10-06T23:12:02 IST" name="Default test" finished-at="2023-10-06T23:12:49 IST" duration-ms="46595">
+      <class name="crmtestLayer.HomePageP">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crmtestLayer.HomePageP@22555ebf]" started-at="2023-10-06T23:12:02 IST" name="setUp" finished-at="2023-10-06T23:12:48 IST" duration-ms="45841" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="mouseHoverAction()[pri:3, instance:crmtestLayer.HomeTestLayer@3eb25e1a]" started-at="2023-10-02T00:44:16 IST" name="mouseHoverAction" finished-at="2023-10-02T00:44:32 IST" duration-ms="16038" status="PASS">
+        <test-method signature="verifyOptionsPresent()[pri:4, instance:crmtestLayer.HomePageP@22555ebf]" started-at="2023-10-06T23:12:48 IST" name="verifyOptionsPresent" finished-at="2023-10-06T23:12:49 IST" duration-ms="683" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- mouseHoverAction -->
-      </class> <!-- crmtestLayer.HomeTestLayer -->
+        </test-method> <!-- verifyOptionsPresent -->
+      </class> <!-- crmtestLayer.HomePageP -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

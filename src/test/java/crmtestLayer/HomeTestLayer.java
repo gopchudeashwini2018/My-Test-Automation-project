@@ -34,7 +34,7 @@ public class HomeTestLayer extends CRMBaseClass {
 
 	}
 
-	@Test(priority = 1)
+	// @Test(priority = 1)
 	public void verifyLinksHomeTab() throws IOException {
 
 		List<String> element = new ArrayList();
@@ -61,7 +61,7 @@ public class HomeTestLayer extends CRMBaseClass {
 		}
 	}
 
-	@Test(priority = 2)
+	// @Test(priority = 2)
 	public void verifyTabIsClickable() throws IOException {
 
 		List<String> listElement = new ArrayList();
@@ -96,38 +96,29 @@ public class HomeTestLayer extends CRMBaseClass {
 	@Test(priority = 3)
 	public void mouseHoverAction() throws IOException {
 
-		List<String> listElement = new ArrayList();
-
-		listElement.add("Home");
-		listElement.add("Calendar");
-		listElement.add("Companies");
-		listElement.add("Contacts");
-		listElement.add("Deals");
-		listElement.add("Tasks");
-		listElement.add("Cases");
-		listElement.add("Call");
-		listElement.add("Email");
-		listElement.add("Text/SMS");
-		listElement.add("Print");
-		listElement.add("Campaigns");
-		listElement.add("Docs");
-		listElement.add("Forms");
-		listElement.add("Reports");
-
-		System.out.println(listElement);
+		List<String> Homepagelinks = objHomePage.listOfElement();
 		objUtils.frameHandler("mainpanel");
 
-		for (String elements : listElement) {
+		for (String elements : Homepagelinks) {
 
 			objHomePage.webElementMouseHover(elements);
 
-			System.out.println(listElement);
-
 		}
 	}
-	@Test(priority=4)
-	public void testRepo()
-	{
+
+	@Test(priority = 5)
+	public void testElement() {
+
+		List<String> Homepagelinks = objHomePage.listOfElement();
+		objUtils.frameHandler("mainpanel");
+		for (String verifyingLinksOnHomePage : Homepagelinks) {
+			objHomePage.verifyTab(verifyingLinksOnHomePage);
+		}
+
+	}
+
+	// @Test(priority=6)
+	public void testRepo() {
 		System.out.println("this is new method for master");
 	}
 }
