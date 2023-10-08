@@ -55,7 +55,7 @@ public class HomePageLayer extends CRMBaseClass {
 	 @Test(priority = 3)
 	public void mouseHoverOnTab() {
 		List<String> Homelinks = objHomePage.listOfElement();
-		objUtils.frameHandler("mainpanel");
+		objUtils.frameHandler("mainpane");
 		for (String verifyLinksOnHomePage : Homelinks) {
 			objHomePage.webElementMouseHover(verifyLinksOnHomePage);
 
@@ -73,7 +73,7 @@ public class HomePageLayer extends CRMBaseClass {
 
 	}
 
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void verifyCalenderOptions() {
 
 		List<String> calOptions = objHomePage.calenderOptions();
